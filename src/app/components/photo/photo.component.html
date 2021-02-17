@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class="row" *ngIf="photosAll">
+            <div *ngFor="let photo of photosAll" class="col-lg-4 col-md-4 col-xs-6 thumb">
+                    <img class="img-thumbnail"
+                         src="{{ photo.url }}"
+                         alt="Another alt text">
+            </div>
+        </div> -->
+
+    <div class="col-md-3 photo" *ngFor="let photo of filteredPhotos">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{photo.title}}</h5>
+        </div>
+        <a href={{photo.url}}>
+          <img class="card-img-bottom" src={{photo.thumbnailUrl}} class="img-fluid" alt="Card image" width="100%" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner> 
+</div>
